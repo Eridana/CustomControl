@@ -9,9 +9,10 @@
 #import "ViewController.h"
 #import "CustomControl.h"
 
-@interface ViewController () <CustomControlDelegate>
+@interface ViewController ()
 @property (nonatomic, weak) IBOutlet CustomControl *control;
 @property (weak, nonatomic) IBOutlet UITextField *indexTextField;
+@property (nonatomic, strong) NSArray *titles;
 
 @end
 
@@ -19,7 +20,8 @@
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    // Do any additional setup after loading the view, typically from a nib.
+    self.titles = [NSArray arrayWithObjects:@"1", @"2", @"3", nil];
+    self.control.titles = self.titles;
 }
 
 - (void)viewWillAppear:(BOOL)animated
@@ -72,11 +74,10 @@
     self.control.fixedInterval = intervalSwitch.isOn;
 }
 
-#pragma mark - CustomControlDelegate
-
-- (void)didSelectItem:(NSString *)item atIndex:(NSUInteger)index
-{
-    NSLog(@"did select item %@ at index %ld", item, index);
+- (IBAction)controlTapped:(id)sender {
+    
+    CustomControl *control = (CustomControl *)sender;
+    NSUInteger index = control.selectedIndex;
     self.indexTextField.text = [NSString stringWithFormat:@"%ld", index];
 }
 

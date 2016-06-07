@@ -5,7 +5,7 @@
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="9529"/>
     </dependencies>
     <scenes>
-        <!--Delegate-->
+        <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="ViewController" sceneMemberID="viewController">
@@ -94,9 +94,11 @@
                                         <color key="value" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="fixedInterval" value="YES"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="shouldSelectItem" value="NO"/>
+                                    <userDefinedRuntimeAttribute type="boolean" keyPath="showSelectedItemBeforeSelection" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <outlet property="delegate" destination="BYZ-38-t0r" id="Tba-eN-WCG"/>
+                                    <action selector="controlTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjg-bO-JRg"/>
                                 </connections>
                             </view>
                         </subviews>
@@ -125,7 +127,7 @@
                         </connections>
                     </view>
                     <connections>
-                        <outlet property="control" destination="ckM-cd-3u3" id="hjU-sS-9jS"/>
+                        <outlet property="control" destination="ckM-cd-3u3" id="Al6-Ra-v6P"/>
                         <outlet property="indexTextField" destination="aBX-eZ-fvN" id="3Oz-Pn-zLe"/>
                     </connections>
                 </viewController>

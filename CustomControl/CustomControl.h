@@ -10,16 +10,9 @@
 
 IB_DESIGNABLE
 
-@protocol CustomControlDelegate <NSObject>
-
-- (void)didSelectItem:(NSString *)item atIndex:(NSUInteger)index;
-
-@end
-
-@interface CustomControl : UIView
+@interface CustomControl : UIControl
 
 @property (nonatomic, strong) NSArray *titles;
-@property (nonatomic, weak) IBOutlet id<CustomControlDelegate> delegate;
 
 - (void)setup;
 
@@ -28,6 +21,7 @@ IB_DESIGNABLE
 @property (nonatomic) IBInspectable CGFloat elementWidth;
 @property (nonatomic) IBInspectable CGFloat selectedElementWidth;
 @property (nonatomic) IBInspectable BOOL fixedInterval;
+@property (nonatomic) IBInspectable BOOL showSelectedItemBeforeSelection;
 
 @property (nonatomic, strong) IBInspectable UIColor *elementBackgroundColor;
 @property (nonatomic, strong) IBInspectable UIColor *selectedElementBackgroundColor;

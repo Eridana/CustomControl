@@ -104,7 +104,7 @@ const int DefaultInterval = 20;
             originX = i * (self.elementWidth + interval);
         }
         
-        if (i == self.selectedIndex) {
+        if (i == self.selectedIndex && self.showSelectedItemBeforeSelection) {
             elementButton = [self buttonForPosition:originX index:i selected:YES];
         }
         else {
@@ -208,19 +208,27 @@ const int DefaultInterval = 20;
     [self setup];
 }
 
+- (void)setShowSelectedItemBeforeSelection:(BOOL)showSelectedItemBeforeSelection
+{
+    _showSelectedItemBeforeSelection = showSelectedItemBeforeSelection;
+    [self setup];
+}
+
 #pragma mark - Events
 
 - (IBAction)didSelectElement:(id)sender
 {
     UIButton *btn = (UIButton *)sender;
-    self.selectedIndex = btn.tag;
     
-    [self setup];
-    
-    if ([self.delegate respondsToSelector:@selector(didSelectItem:atIndex:)]) {
-        [self.delegate didSelectItem:[self.titles objectAtIndex:self.selectedIndex] atIndex:self.selectedIndex];
+    if (self.selectedIndex == btn.tag && self.showSelectedItemBeforeSelection == YES) {
+        self.showSelectedItemBeforeSelection = NO;
+    } else {
+        self.selectedIndex = btn.tag;
+        self.showSelectedItemBeforeSelection = YES;
     }
+    [self sendActionsForControlEvents:UIControlEventTouchUpInside];
 }
+
 
 #pragma mark - Add/remove/insert element(s)
 
