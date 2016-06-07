@@ -19,7 +19,7 @@ IB_DESIGNABLE
 @interface CustomControl : UIView
 
 @property (nonatomic, strong) NSArray *titles;
-@property (nonatomic, weak) id<CustomControlDelegate> delegate;
+@property (nonatomic, weak) IBOutlet id<CustomControlDelegate> delegate;
 
 - (void)setup;
 

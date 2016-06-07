@@ -20,7 +20,6 @@
 - (void)viewDidLoad {
     [super viewDidLoad];
     // Do any additional setup after loading the view, typically from a nib.
-    self.control.delegate = self;
 }
 
 - (void)viewWillAppear:(BOOL)animated
