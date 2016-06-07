@@ -13,6 +13,7 @@
 		3FA6C7A31D06B1AD00D4C385 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6C7A11D06B1AD00D4C385 /* Main.storyboard */; };
 		3FA6C7A51D06B1AD00D4C385 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6C7A41D06B1AD00D4C385 /* Assets.xcassets */; };
 		3FA6C7A81D06B1AD00D4C385 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 3FA6C7A61D06B1AD00D4C385 /* LaunchScreen.storyboard */; };
+		3FA6C7B51D06B3A300D4C385 /* CustomControl.m in Sources */ = {isa = PBXBuildFile; fileRef = 3FA6C7B41D06B3A300D4C385 /* CustomControl.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -26,6 +27,8 @@
 		3FA6C7A41D06B1AD00D4C385 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3FA6C7A71D06B1AD00D4C385 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		3FA6C7A91D06B1AD00D4C385 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3FA6C7B31D06B3A300D4C385 /* CustomControl.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CustomControl.h; sourceTree = "<group>"; };
+		3FA6C7B41D06B3A300D4C385 /* CustomControl.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CustomControl.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,14 +61,14 @@
 		3FA6C7971D06B1AD00D4C385 /* CustomControl */ = {
 			isa = PBXGroup;
 			children = (
+				3FA6C7A41D06B1AD00D4C385 /* Assets.xcassets */,
 				3FA6C79B1D06B1AD00D4C385 /* AppDelegate.h */,
 				3FA6C79C1D06B1AD00D4C385 /* AppDelegate.m */,
 				3FA6C79E1D06B1AD00D4C385 /* ViewController.h */,
 				3FA6C79F1D06B1AD00D4C385 /* ViewController.m */,
-				3FA6C7A11D06B1AD00D4C385 /* Main.storyboard */,
-				3FA6C7A41D06B1AD00D4C385 /* Assets.xcassets */,
 				3FA6C7A61D06B1AD00D4C385 /* LaunchScreen.storyboard */,
-				3FA6C7A91D06B1AD00D4C385 /* Info.plist */,
+				3FA6C7A11D06B1AD00D4C385 /* Main.storyboard */,
+				3FA6C7B21D06B2C700D4C385 /* Control */,
 				3FA6C7981D06B1AD00D4C385 /* Supporting Files */,
 			);
 			path = CustomControl;
@@ -74,9 +77,19 @@
 		3FA6C7981D06B1AD00D4C385 /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3FA6C7A91D06B1AD00D4C385 /* Info.plist */,
 				3FA6C7991D06B1AD00D4C385 /* main.m */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		3FA6C7B21D06B2C700D4C385 /* Control */ = {
+			isa = PBXGroup;
+			children = (
+				3FA6C7B31D06B3A300D4C385 /* CustomControl.h */,
+				3FA6C7B41D06B3A300D4C385 /* CustomControl.m */,
+			);
+			name = Control;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -151,6 +164,7 @@
 			files = (
 				3FA6C7A01D06B1AD00D4C385 /* ViewController.m in Sources */,
 				3FA6C79D1D06B1AD00D4C385 /* AppDelegate.m in Sources */,
+				3FA6C7B51D06B3A300D4C385 /* CustomControl.m in Sources */,
 				3FA6C79A1D06B1AD00D4C385 /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -298,6 +312,7 @@
 				3FA6C7AE1D06B1AD00D4C385 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
