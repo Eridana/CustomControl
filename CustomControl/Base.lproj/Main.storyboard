@@ -98,7 +98,7 @@
                                     <userDefinedRuntimeAttribute type="boolean" keyPath="showSelectedItemBeforeSelection" value="NO"/>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
-                                    <action selector="controlTapped:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mjg-bO-JRg"/>
+                                    <action selector="controlDidChange:" destination="BYZ-38-t0r" eventType="valueChanged" id="lIc-hf-TbK"/>
                                 </connections>
                             </view>
                         </subviews>

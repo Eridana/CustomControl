@@ -226,7 +226,7 @@ const int DefaultInterval = 20;
         self.selectedIndex = btn.tag;
         self.showSelectedItemBeforeSelection = YES;
     }
-    [self sendActionsForControlEvents:UIControlEventTouchUpInside];
+    [self sendActionsForControlEvents:UIControlEventValueChanged];
 }
 
 
@@ -248,7 +248,7 @@ const int DefaultInterval = 20;
 - (void)removeElementAtIndex:(NSUInteger)index
 {
     if (index > self.titles.count - 1) {
-        index = self.titles.count;
+        index = self.titles.count - 1;
     }
     
     NSMutableArray *newTitles = [NSMutableArray arrayWithArray: self.titles];

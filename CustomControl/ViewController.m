@@ -34,35 +34,22 @@
     // Dispose of any resources that can be recreated.
 }
 
+#pragma mark - Events
+
 - (IBAction)deleteAtIndexTapped:(id)sender {
-    @try {
-        NSUInteger index = [[NSDecimalNumber decimalNumberWithString:self.indexTextField.text] unsignedIntegerValue];
-        [self.control removeElementAtIndex:index];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"error %@", [exception description]);
-    }
+    NSUInteger index = [[NSDecimalNumber decimalNumberWithString:self.indexTextField.text] unsignedIntegerValue];
+    [self.control removeElementAtIndex:index];
 }
 
 - (IBAction)insertAtIndexTapped:(id)sender {
-    @try {
-        NSUInteger index = [[NSDecimalNumber decimalNumberWithString:self.indexTextField.text] unsignedIntegerValue];
-        NSString *title = [NSString stringWithFormat:@"%ld", self.control.titles.count + 1];
-        [self.control addElementWithTitle:title atIndex:index];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"error %@", [exception description]);
-    }
+    NSUInteger index = [[NSDecimalNumber decimalNumberWithString:self.indexTextField.text] unsignedIntegerValue];
+    NSString *title = [NSString stringWithFormat:@"%ld", self.control.titles.count + 1];
+    [self.control addElementWithTitle:title atIndex:index];
 }
 
 - (IBAction)selectItemAtIndexTapped:(id)sender {
-    @try {
-        NSUInteger index = [[NSDecimalNumber decimalNumberWithString:self.indexTextField.text] unsignedIntegerValue];
-        [self.control setSelectedIndex:index];
-    }
-    @catch (NSException *exception) {
-        NSLog(@"error %@", [exception description]);
-    }
+    NSUInteger index = [[NSDecimalNumber decimalNumberWithString:self.indexTextField.text] unsignedIntegerValue];
+    [self.control setSelectedIndex:index];
 }
 
 - (IBAction)hideKeyboard:(id)sender {
@@ -74,8 +61,7 @@
     self.control.fixedInterval = intervalSwitch.isOn;
 }
 
-- (IBAction)controlTapped:(id)sender {
-    
+- (IBAction)controlDidChange:(id)sender {
     CustomControl *control = (CustomControl *)sender;
     NSUInteger index = control.selectedIndex;
     self.indexTextField.text = [NSString stringWithFormat:@"%ld", index];
